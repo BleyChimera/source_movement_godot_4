@@ -6,13 +6,12 @@
 radius = 0.1
 height = 0.6
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("FLOOR_CAST", "CAMERA_PIVOT")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("cam_pivot")]
 floor_stop_on_slope = false
 floor_block_on_wall = false
 floor_max_angle = 0.802851
 script = ExtResource("1_04hbr")
-FLOOR_CAST = NodePath("FloorCast")
-CAMERA_PIVOT = NodePath("CameraPivot")
+cam_pivot = NodePath("CameraPivot")
 
 [node name="CameraPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.878542, 0)
@@ -28,7 +27,3 @@ shape = SubResource("CapsuleShape3D_b2p7p")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 shape = SubResource("CapsuleShape3D_b2p7p")
 
-[node name="FloorCast" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0168942, 0)
-target_position = Vector3(0, -0.2, 0)
-hit_from_inside = true
